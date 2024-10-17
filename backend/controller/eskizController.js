@@ -51,6 +51,8 @@ const allEskizs = expressAsyncHandler(async (req, res) => {
     res.status(404);
     throw new Error("Gosterilebilecek eskiz bulunamadi !");
   }
+
+  res.status(200).json(eskizs);
 });
 
 export { getEskizs, getEskiz, deleteEskiz, allEskizs };
