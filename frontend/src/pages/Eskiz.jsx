@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
 import { FaShare } from "react-icons/fa";
 
 const Eskiz = ({ data }) => {
@@ -21,16 +20,11 @@ const Eskiz = ({ data }) => {
           }`}
         />
         {hovered && (
-          <Slide
-            className="  w-full absolute bottom-0 text-slate-800 p-2 bg-gradient-to-t from-slate-50 via-slate-100 to-transparent opacity-50"
-            direction="up"
-            duration={600} // Animasyonun süresini milisaniye cinsinden belirler
-            triggerOnce={false} // Hover sonrasında tekrar tetiklenmesini sağlar
-          >
+          <div className="  w-full absolute bottom-0 text-slate-800 p-2 bg-gradient-to-t from-slate-50 via-slate-100 to-transparent opacity-50">
             <p className="flex justify-between">
               {data.title} <FaShare />
             </p>
-          </Slide>
+          </div>
         )}
       </Link>
     </div>

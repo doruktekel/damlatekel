@@ -1,14 +1,27 @@
 import bioPicture from "../assets/d1.webp";
+import { motion } from "motion/react";
 
 const Bio = () => {
   return (
-    <div className="w-8/12 mx-auto flex flex-wrap  justify-center py-8 gap-10 ">
-      <img
+    <div className="w-8/12 mx-auto flex flex-wrap  justify-center py-8 gap-10 min-h-screen ">
+      <motion.img
+        initial={{ x: -20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
         src={bioPicture}
         className="w-80 rounded-lg md:min-w-60 md:object-cover flex-1"
         alt="bio"
       />
-      <div className="flex flex-col gap-4 text-gray-500 sm:w-3/6 flex-1 ">
+      <motion.div
+        initial={{ x: 20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+        className="flex flex-col gap-4 text-gray-500 sm:w-3/6 flex-1 "
+      >
         <p>
           Ekim 1987 yılında Samsun ’da doğdum.NEU Sağlık Bilimleri Fakültesi
           Hemşirelik Bölümünden mezun oldum.Uzun süredir kurumsal hayatta
@@ -20,7 +33,7 @@ const Bio = () => {
           <br /> Hayatı rengarenk boyamanın her şeyi değiştireceğine ve hayal
           gücünün dünyayı kurtaracağına inanıyorum.💛🪄✨🕊️
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
 import { FaShare } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const Illustration = ({ data }) => {
   const [hovered, setHovered] = useState(false);
@@ -21,16 +21,19 @@ const Illustration = ({ data }) => {
           }`}
         />
         {hovered && (
-          <Slide
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 0.5 }}
+            transition={{
+              delay: 0.3,
+              type: "spring",
+            }}
             className="  w-full absolute bottom-0 text-slate-800 p-2 bg-gradient-to-t from-slate-50 via-slate-100 to-transparent opacity-50"
-            direction="up"
-            duration={600} // Animasyonun süresini milisaniye cinsinden belirler
-            triggerOnce={false} // Hover sonrasında tekrar tetiklenmesini sağlar
           >
             <p className="flex justify-between">
               {data.title} <FaShare />
             </p>
-          </Slide>
+          </motion.div>
         )}
       </Link>
     </div>

@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 import Navbar from "../components/Navbar";
-import { Fade } from "react-awesome-reveal";
 
 const MainLayout = ({ children, theme }) => (
   <div
@@ -13,19 +12,11 @@ const MainLayout = ({ children, theme }) => (
         : "bg-gray-800 text-gray-200"
     } relative min-h-screen flex flex-col`}
   >
-    <Fade>
-      <Header />
-    </Fade>
-
-    <Fade>
-      <Navbar />
-    </Fade>
-
+    <Header />
+    <Navbar />
     <div className="flex-grow">{children}</div>
     <BackToTop />
-    <Fade>
-      <Footer />
-    </Fade>
+    <Footer />
   </div>
 );
 

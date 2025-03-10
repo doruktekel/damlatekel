@@ -5,35 +5,58 @@ import { ThemeContext } from "../context/ThemeContext";
 import Minimenu from "./Minimenu";
 import { MiniContext } from "../context/MiniMenuContext";
 import { MdOutlineWbSunny, MdSunny } from "react-icons/md";
+import { motion } from "motion/react";
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { show } = useContext(MiniContext);
   return (
     <div className="w-full flex align-middle justify-center text-center pt-5 flex-wrap">
-      <div className="justify-center align-middle">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 100,
+        }}
+        viewport={{ once: true }}
+        className="justify-center align-middle"
+      >
         <Link to="/">
           <img src={mainImage} alt="DamlaTekelKivrak" className="w-52 " />
         </Link>
-      </div>
+      </motion.div>
       <div className="flex  justify-between gap-10">
         <div className="flex flex-col justify-center">
           <Link to="/">
-            <h1
+            <motion.h1
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.2,
+              }}
+              viewport={{ once: true }}
               className={`font-headerName text-6xl  select-none max-sm:text-4xl ${
                 theme === "light" ? "text-blue-400" : "text-orange-300"
               }`}
             >
               Damla Tekel Kivrak
-            </h1>
+            </motion.h1>
           </Link>
-          <p
+          <motion.p
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.6,
+            }}
+            viewport={{ once: true }}
             className={`text-xs font-mono  ${
               theme === "light" ? "text-stone-500" : "text-orange-100"
             } `}
           >
             Illustrator & Concept Artist
-          </p>
+          </motion.p>
         </div>
         <div className="content-center">
           <Minimenu />

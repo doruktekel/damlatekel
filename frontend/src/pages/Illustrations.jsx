@@ -27,8 +27,6 @@ const Illustrations = () => {
 
   return (
     <div className="w-11/12 mx-auto py-5 flex flex-col justify-center items-center">
-      {/* Yükleniyor gösterimi */}
-
       {/* Kartları render et */}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">
         {datas?.map((data) => (

@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaBehanceSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
+import { motion } from "motion/react";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
@@ -16,12 +17,25 @@ const Footer = () => {
     >
       <div className="w-5/6 p-4 flex flex-col gap-4">
         <div className="flex flex-wrap  justify-between items-center ">
-          <div className="flex-col font-mono text-left">
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+            }}
+            className="flex-col font-mono text-left"
+          >
             <h6 className="text-sm">Contact</h6>
             <p className="text-sm">cicikus@gmail.com</p>
             <p className="text-sm">@cicikus</p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+            }}
+          >
             <ul className="text-3xl flex gap-3 ">
               <li>
                 <Link
@@ -50,7 +64,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
         <div>
           <p className="text-s max-sm:text-xs">

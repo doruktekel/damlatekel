@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import contactPicture from "../assets/d2.webp";
 import { ThemeContext } from "../context/ThemeContext";
 import useSendMail from "../hooks/useSendMail";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
@@ -27,10 +28,17 @@ const Contact = () => {
   console.log(formData);
 
   return (
-    <div className="max-w-5xl mx-auto py-10 gap-4 flex flex-col items-center  sm:flex-row sm:justify-between text-gray-400">
+    <div className="max-w-5xl mx-auto py-8 gap-4 flex flex-col items-center  sm:flex-row sm:justify-between text-gray-400 ">
       {/* <p className="text-xl text-center ">Iletisim</p> */}
 
-      <div className="flex-1 flex flex-col gap-4 p-4  ">
+      <motion.div
+        initial={{ x: -20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+        className="flex-1 flex flex-col gap-4 p-4  "
+      >
         <p>
           Benimle sosyal medya platformları dışında iletişime geçmek için mail
           atabilirsiniz. <br />
@@ -91,15 +99,22 @@ const Contact = () => {
             {loading ? "Loading..." : <span>Gonder</span>}
           </button>
         </form>
-      </div>
+      </motion.div>
 
-      <div className="flex-1 p-4  ">
+      <motion.div
+        initial={{ x: 20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+        className="flex-1 p-4  "
+      >
         <img
           src={contactPicture}
           alt="contactPicture"
           className=" max-h-[700px] object-cover rounded-lg"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,25 +1,38 @@
 import { useContext } from "react";
 import timelapse from "../assets/timelapse.mp4";
 import { ThemeContext } from "../context/ThemeContext";
+import { motion } from "motion/react";
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-10/12 mx-auto flex-col justify-center py-8 ">
-      <video
+    <div className="w-10/12 mx-auto flex-col justify-center py-8 min-h-screen ">
+      <motion.video
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.1,
+        }}
         className={`rounded-md ${theme === "dark" && "brightness-75"} `}
         muted
         autoPlay
         loop
       >
         <source type="video/mp4" src={timelapse} />
-      </video>
-      <h1>
+      </motion.video>
+      <motion.h1
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.1,
+        }}
+        className="my-10"
+      >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quisquam
         esse impedit nostrum tempora, accusamus natus praesentium. Qui quos
         ullam illo amet veritatis alias quaerat repellendus, et minus, fugiat
         aspernatur?
-      </h1>
+      </motion.h1>
     </div>
   );
 };

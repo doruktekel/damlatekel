@@ -1,7 +1,7 @@
 import React from "react";
 
 const Secrets = () => {
-  return <div>Secrets</div>;
+  return <div className="min-h-screen">Secrets</div>;
 };
 
 export default Secrets;

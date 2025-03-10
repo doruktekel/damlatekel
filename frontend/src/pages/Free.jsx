@@ -4,11 +4,12 @@ import { IoWarningOutline } from "react-icons/io5";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { motion } from "motion/react";
 
 const Free = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-8/12 mx-auto flex flex-col items-center flex-wrap py-8 gap-10 ">
+    <div className="w-8/12 mx-auto flex flex-col items-center flex-wrap py-8 gap-10 min-h-screen ">
       <div className="flex flex-col md:flex-row gap-2 items-center">
         <IoWarningOutline className=" text-3xl md:text-2xl  text-red-600" />
         <p className="text-red-600">Uyari </p>{" "}
@@ -17,7 +18,16 @@ const Free = () => {
         </p>
       </div>
 
-      <img className="w-full" src={free1} alt="ucretsiz indirilebilir cizim" />
+      <motion.img
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.1,
+        }}
+        className="w-full"
+        src={free1}
+        alt="ucretsiz indirilebilir cizim"
+      />
       <p className="text-gray-400 text-sm">
         Bu A6 boyutundaki katlanmış tebrik kartının yazdırılabilir PDF'ini ve
         ayrıca renklendirmeye hazır A5 baskısını burada bulabilirsiniz:{" "}
@@ -36,7 +46,16 @@ const Free = () => {
         <span>Indir</span>
       </a>
       <div className="w-full h-0.5 bg-slate-300"></div>
-      <img className="w-full" src={free2} alt="ucretsiz indirilebilir cizim" />
+      <motion.img
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+        className="w-full"
+        src={free2}
+        alt="ucretsiz indirilebilir cizim"
+      />
       <p className="text-gray-400 text-sm">
         Bu A6 boyutundaki katlanmış tebrik kartının yazdırılabilir PDF'ini ve
         ayrıca renklendirmeye hazır A5 baskısını burada bulabilirsiniz:{" "}
