@@ -28,7 +28,7 @@ const Free = () => {
         src={free1}
         alt="ucretsiz indirilebilir cizim"
       />
-      <p className="text-gray-400 text-sm">
+      <p className=" text-sm">
         Bu A6 boyutundaki katlanmış tebrik kartının yazdırılabilir PDF'ini ve
         ayrıca renklendirmeye hazır A5 baskısını burada bulabilirsiniz:{" "}
       </p>
@@ -56,7 +56,7 @@ const Free = () => {
         src={free2}
         alt="ucretsiz indirilebilir cizim"
       />
-      <p className="text-gray-400 text-sm">
+      <p className=" text-sm">
         Bu A6 boyutundaki katlanmış tebrik kartının yazdırılabilir PDF'ini ve
         ayrıca renklendirmeye hazır A5 baskısını burada bulabilirsiniz:{" "}
       </p>

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const Bio = () => {
   return (
-    <div className="w-8/12 mx-auto flex flex-wrap  justify-center py-8 gap-10 min-h-screen ">
+    <div className="w-8/12 mx-auto flex flex-wrap  justify-center py-8 gap-10  ">
       <motion.img
         initial={{ x: -20, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -20,7 +20,7 @@ const Bio = () => {
         transition={{
           delay: 0.2,
         }}
-        className="flex flex-col gap-4 text-gray-500 sm:w-3/6 flex-1 "
+        className="flex flex-col gap-4  sm:w-3/6 flex-1 "
       >
         <p>
           Ekim 1987 yılında Samsun ’da doğdum.NEU Sağlık Bilimleri Fakültesi

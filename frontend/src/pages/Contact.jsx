@@ -28,9 +28,7 @@ const Contact = () => {
   console.log(formData);
 
   return (
-    <div className="max-w-5xl mx-auto py-8 gap-4 flex flex-col items-center  sm:flex-row sm:justify-between text-gray-400 ">
-      {/* <p className="text-xl text-center ">Iletisim</p> */}
-
+    <div className="max-w-5xl mx-auto py-8 gap-4 flex flex-col items-center  sm:flex-row sm:justify-between  ">
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}

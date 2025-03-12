@@ -29,7 +29,7 @@ const Cards = () => {
 
       {/* Kartları render et */}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">
-        {datas?.map((data) => (
+        {datas?.map((data, index) => (
           <Card key={data._id} data={data} />
         ))}
       </div>
