@@ -24,7 +24,7 @@ const Cards = () => {
   }, [hasMore, loading, loadMore]);
 
   return (
-    <div className="w-11/12 mx-auto py-5 flex flex-col justify-center items-center">
+    <div className="w-11/12 mx-auto py-5 flex flex-col justify-center items-center min-h-screen">
       {/* Yükleniyor gösterimi */}
 
       {/* Kartları render et */}

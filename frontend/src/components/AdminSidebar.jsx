@@ -19,14 +19,14 @@ const AdminSidebar = () => {
           className="font-semibold flex justify-between items-center select-none "
           onClick={() => setShow(!show)}
         >
-          <span>Cizimlerim </span>
+          <span>Çizimlerim </span>
           {show ? <FaArrowCircleDown /> : <HiMinusSmall />}
         </p>
         {show && (
           <ul className="pl-5 flex flex-col gap-2 mt-2  ">
             <li className="flex gap-2 items-center">
               <Link to={"/admincards"} className="hover:underline ">
-                Kartlar & Afisler
+                Kartlar & Afişler
               </Link>
             </li>
             <li className="flex gap-2 items-center">
@@ -46,7 +46,7 @@ const AdminSidebar = () => {
           className="flex gap-2 items-center cursor-pointer "
           onClick={handleLogout}
         >
-          <p className="font-semibold">Cikis</p>
+          <p className="font-semibold">Çıkış</p>
           <IoLogOutOutline className="text-xl" />
         </div>
       </div>

@@ -41,7 +41,7 @@ const Header = () => {
                 theme === "light" ? "text-blue-400" : "text-orange-300"
               }`}
             >
-              Damla Tekel Kivrak
+              Damla Tekel Kıvrak
             </motion.h1>
           </Link>
           <motion.p
@@ -124,7 +124,7 @@ const Header = () => {
                     }`
                   }
                 >
-                  Kartlar ve Afisler
+                  Kartlar ve Afişler
                 </NavLink>
               </li>
 
@@ -151,7 +151,7 @@ const Header = () => {
                     }`
                   }
                 >
-                  Ucretsiz Kaynaklar
+                  Ücretsiz Kaynaklar
                 </NavLink>
               </li>
               <li>

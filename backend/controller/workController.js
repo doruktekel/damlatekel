@@ -1,6 +1,5 @@
 import expressAsyncHandler from "express-async-handler";
 import DrawingModel from "../model/drawingModel.js";
-import { error } from "console";
 
 const createWork = expressAsyncHandler(async (req, res) => {
   const { title, description, imageUrl, category, user } = req.body;
@@ -14,7 +13,7 @@ const createWork = expressAsyncHandler(async (req, res) => {
   res.status(201).json(newDraw);
 });
 const getWorks = expressAsyncHandler(async (req, res) => {
-  const works = await DrawingModel.find({});
+  const works = await DrawingModel.find({}).sort({ createdAt: -1 });
 
   if (!works) {
     res.status(404);

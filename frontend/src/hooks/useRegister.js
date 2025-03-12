@@ -27,7 +27,7 @@ const useRegister = () => {
       if (data.success === false) {
         throw new Error(data.errorMessage);
       }
-      toast.success("Kayit basarili kiz valla bravo :) ");
+      toast.success("Kayıt başarılı :) ");
       navigate("/login");
     } catch (error) {
       if (
@@ -50,24 +50,24 @@ export default useRegister;
 
 const errorRegisterHandler = ({ email, password, name, confirmPassword }) => {
   if (!email || !name || !password || !confirmPassword) {
-    toast.error("Butun form elemanlarini doldurunuz !");
+    toast.error("Bütün form elemanlarını doldurunuz !");
     return false;
   }
 
   const validEmail = validator.isEmail(email);
 
   if (!validEmail) {
-    toast.error("Email yapiniz dogru degil !");
+    toast.error("Email yapınız doğru degil !");
     return false;
   }
 
   if (password.length < 6) {
-    toast.error("Sifreniz minimum 6 karakterli olmali !");
+    toast.error("Şifreniz minimum 6 karakterli olmalı !");
     return false;
   }
 
   if (password !== confirmPassword) {
-    toast.error("Sifreniz uyumlu degil !");
+    toast.error("Şifreniz uyumlu değil !");
     return false;
   }
 

@@ -67,7 +67,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Kartlar ve Afisler
+              Kartlar ve Afişler
             </NavLink>
           </li>
           <li>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Ucretsiz Kaynaklar
+              Ücretsiz Kaynaklar
             </NavLink>
           </li>
           <li>

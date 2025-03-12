@@ -32,7 +32,7 @@ const AdminRightSide = () => {
       ),
     },
     {
-      header: "Isim",
+      header: "İsim",
       accessorKey: "title",
       cell: ({ getValue }) => {
         const title = getValue();
@@ -44,7 +44,7 @@ const AdminRightSide = () => {
       accessorKey: "category",
     },
     {
-      header: "Olusturulma Tarihi",
+      header: "Oluşturulma Tarihi",
       accessorKey: "createdAt",
       cell: ({ getValue }) => {
         const date = new Date(getValue());
@@ -57,7 +57,7 @@ const AdminRightSide = () => {
     },
   ];
   return (
-    <div className="pt-32 pb-32 pl-80 pr-20 bg-gray-300 text-slate-700 h-full flex flex-col gap-10 min-h-lvh">
+    <div className="pt-32 pb-40 pl-80 pr-20 bg-gray-300 text-slate-700 h-full flex flex-col gap-10 min-h-lvh">
       <CardsInfo />
       <Table data={data} columns={columns} />
     </div>

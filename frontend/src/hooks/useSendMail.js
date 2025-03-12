@@ -15,7 +15,7 @@ const useSendMail = () => {
       if (data.success === false) {
         throw new Error(data.errorMessage);
       }
-      toast.success("Mail gonderildi");
+      toast.success("Mail gönderildi");
     } catch (error) {
       if (
         error.response &&

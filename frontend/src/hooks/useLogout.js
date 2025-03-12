@@ -23,7 +23,7 @@ const useLogout = () => {
         throw new Error(data.errorMessage);
       }
       dispatch(signOutSuccess());
-      toast.success("Cikis basarili :) ");
+      toast.success("Cıkış başarılı :) ");
       navigate("/");
     } catch (error) {
       if (

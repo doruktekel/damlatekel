@@ -8,13 +8,13 @@ import { getStorage, ref, deleteObject } from "firebase/storage";
 const useDeleteDraw = () => {
   const deleteDraw = async (imageName, url) => {
     const result = await Swal.fire({
-      title: "Bu cizimi silmek istedigine emin misin ?",
-      text: "Bu islemin geri donusu yok !",
+      title: "Bu çizimi silmek istediğine emin misin ?",
+      text: "Bu işlemin geri dönüşü yok !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Evet, sil!",
+      confirmButtonText: "Evet, Sil !",
     });
 
     if (result.isConfirmed) {
@@ -38,7 +38,7 @@ const useDeleteDraw = () => {
           });
 
         Swal.fire({
-          title: "Silindi!",
+          title: "Silindi !",
           text: "Resim bu listeden silindi.",
           icon: "success",
         });
@@ -54,7 +54,7 @@ const useDeleteDraw = () => {
         }
         Swal.fire({
           title: "Hata !",
-          text: "Silinirken hata olustu.",
+          text: "Silinirken hata oluştu.",
           icon: "error",
         });
       }

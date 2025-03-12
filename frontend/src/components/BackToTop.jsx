@@ -44,7 +44,7 @@ const BackToTop = () => {
         } `}
       >
         <FaArrowCircleUp className="text-3xl" />
-        <span>Basa Don</span>
+        <span>Başa Dön</span>
       </Link>
     </div>
   );

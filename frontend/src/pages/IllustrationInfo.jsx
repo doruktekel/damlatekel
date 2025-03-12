@@ -63,7 +63,7 @@ const CardInfo = () => {
     }
   };
 
-  if (!IllustrationDetails) return <p>Illustrasyon bulunamadi</p>;
+  if (!IllustrationDetails) return <p>Illustrasyon Bulunamadı</p>;
 
   return (
     <div className="max-w-7xl mx-auto  py-5">

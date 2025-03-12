@@ -7,7 +7,8 @@ const getCards = expressAsyncHandler(async (req, res) => {
 
   const cards = await DrawingModel.find({ category: "kartlar&afisler" })
     .skip(index)
-    .limit(limit);
+    .limit(limit)
+    .sort({ createdAt: -1 });
 
   if (!cards) {
     res.status(404);
@@ -45,7 +46,9 @@ const deleteCard = expressAsyncHandler(async (req, res) => {
 });
 
 const allCards = expressAsyncHandler(async (req, res) => {
-  const cards = await DrawingModel.find({ category: "kartlar&afisler" });
+  const cards = await DrawingModel.find({ category: "kartlar&afisler" }).sort({
+    createdAt: -1,
+  });
 
   if (cards.length === 0) {
     res.status(404);

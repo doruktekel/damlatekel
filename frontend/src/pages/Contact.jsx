@@ -56,7 +56,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
         >
           <div className="flex justify-center">
-            <p className="text-xl">Iletisime Gec</p>
+            <p className="text-xl">İletişime Geç</p>
           </div>
           <div className="flex gap-2  flex-wrap flex-col">
             <label htmlFor="name">Ad :</label>
@@ -96,7 +96,7 @@ const Contact = () => {
             } `}
             disabled={loading}
           >
-            {loading ? "Loading..." : <span>Gonder</span>}
+            {loading ? "Loading..." : <span>Gönder</span>}
           </button>
         </form>
       </motion.div>

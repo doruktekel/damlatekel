@@ -62,7 +62,7 @@ const EskizInfo = () => {
     }
   };
 
-  if (!eskizDetails) return <p>Card not found</p>;
+  if (!eskizDetails) return <p>Eskiz Bulunamadı</p>;
 
   return (
     <div className="max-w-7xl mx-auto  py-5">

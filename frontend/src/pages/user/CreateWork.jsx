@@ -142,7 +142,7 @@ const CreateWork = () => {
           <div className="leftSide flex-1 flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <label htmlFor="title" className="font-semibold">
-                <span className="text-red-600"> * </span>Baslik
+                <span className="text-red-600"> * </span>Başlık
               </label>
               <input
                 type="text"
@@ -155,7 +155,7 @@ const CreateWork = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="description" className="font-semibold">
-                Aciklama
+                Açıklama
               </label>
               <textarea
                 type="textarea"
@@ -191,7 +191,7 @@ const CreateWork = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="draw" className="font-semibold">
-                <span className="text-red-600"> * </span>Ciziminizi Seciniz
+                <span className="text-red-600"> * </span>Çiziminizi Seçiniz
               </label>
               <div className="flex justify-between">
                 <input
@@ -207,7 +207,7 @@ const CreateWork = () => {
                   onClick={handleUploadImage}
                   className="flex gap-2 bg-slate-800 text-white hover:text-slate-800 hover:bg-white rounded-lg p-2 items-center hover:shadow-lg transition-all ease-in-out duration-300"
                 >
-                  Gorseli Yukle
+                  Görseli Yükle
                 </button>
               </div>
               {filePercentage > 0 && filePercentage < 100 && (
@@ -229,7 +229,7 @@ const CreateWork = () => {
           className=" self-center border-green-700 border-2  bg-white text-green-700 rounded-lg p-2 items-center hover:shadow-lg transition-all ease-in-out duration-300 hover:bg-green-700 hover:text-white"
           disabled={loading}
         >
-          {loading ? "Loading" : "Cizimini Ekle"}
+          {loading ? "Yükleniyor..." : "Cizimini Ekle"}
         </button>
       </form>
     </div>

@@ -25,7 +25,7 @@ const Footer = () => {
             }}
             className="flex-col font-mono text-left"
           >
-            <h6 className="text-sm">Contact</h6>
+            <h6 className="text-sm">İletişim</h6>
             <p className="text-sm">cicikus@gmail.com</p>
             <p className="text-sm">@cicikus</p>
           </motion.div>
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-s max-sm:text-xs">
-            ​All rights reserved. © copyright 2023 Damla Tekel Kivrak
+            ​All rights reserved. © copyright 2025 Damla Tekel Kivrak
           </p>
         </div>
       </div>

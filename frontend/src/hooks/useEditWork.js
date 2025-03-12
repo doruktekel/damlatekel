@@ -15,7 +15,7 @@ const useEditWork = () => {
       if (data.success === false) {
         throw new Error(data.errorMessage);
       }
-      toast.success("Kayit degistirildi !");
+      toast.success("Kayıt değiştirildi !");
     } catch (error) {
       if (
         error.response &&

@@ -12,9 +12,9 @@ const Free = () => {
     <div className="w-8/12 mx-auto flex flex-col items-center flex-wrap py-8 gap-10 min-h-screen ">
       <div className="flex flex-col md:flex-row gap-2 items-center">
         <IoWarningOutline className=" text-3xl md:text-2xl  text-red-600" />
-        <p className="text-red-600">Uyari </p>{" "}
+        <p className="text-red-600">Uyarı </p>{" "}
         <p className="text-center">
-          Bu ucretsiz hediyeler yalnizca kisisel kullanim icindir !
+          Bu ücretsiz hediyeler yalnızca kişisel kullanım içindir !
         </p>
       </div>
 
@@ -43,7 +43,7 @@ const Free = () => {
         } `}
       >
         <FaCloudDownloadAlt className="text-3xl" />
-        <span>Indir</span>
+        <span>İndir</span>
       </a>
       <div className="w-full h-0.5 bg-slate-300"></div>
       <motion.img
@@ -71,7 +71,7 @@ const Free = () => {
         } `}
       >
         <FaCloudDownloadAlt className="text-3xl" />
-        <span>Indir</span>
+        <span>İndir</span>
       </a>
     </div>
   );

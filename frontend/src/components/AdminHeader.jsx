@@ -35,7 +35,7 @@ const AdminHeader = () => {
   return (
     <div className="flex fixed w-full z-10 justify-between mx-auto items-center h-12  sm:h-16 px-5 shadow-lg bg-slate-800 text-white  ">
       <div className="flex gap-2">
-        <p>Hosgeldin</p> <p className="font-semibold"> {name}</p>
+        <p>Hoşgeldin</p> <p className="font-semibold"> {name}</p>
       </div>
 
       <div className="flex gap-5">
@@ -57,10 +57,10 @@ const AdminHeader = () => {
           className="flex  gap-1 sm:gap-2 items-center border border-white rounded-lg p-1   sm:p-2 hover:bg-white hover:text-slate-800 transition-all ease-in-out duration-300 "
         >
           {loading ? (
-            "Loading..."
+            "Çıkış Yapılıyor..."
           ) : (
             <>
-              <span>Cikis Yap</span> <IoLogOutOutline className=" sm:text-xl" />
+              <span>Çıkış Yap</span> <IoLogOutOutline className=" sm:text-xl" />
             </>
           )}
         </button>

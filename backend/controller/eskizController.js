@@ -7,7 +7,8 @@ const getEskizs = expressAsyncHandler(async (req, res) => {
 
   const eskizs = await DrawingModel.find({ category: "eskizler" })
     .skip(index)
-    .limit(limit);
+    .limit(limit)
+    .sort({ createdAt: -1 });
 
   if (eskizs.length === 0) {
     res.status(404);
@@ -45,7 +46,9 @@ const deleteEskiz = expressAsyncHandler(async (req, res) => {
 });
 
 const allEskizs = expressAsyncHandler(async (req, res) => {
-  const eskizs = await DrawingModel.find({ category: "eskizler" });
+  const eskizs = await DrawingModel.find({ category: "eskizler" }).sort({
+    createdAt: -1,
+  });
 
   if (eskizs.length === 0) {
     res.status(404);

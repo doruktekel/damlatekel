@@ -36,7 +36,7 @@ const useGetAllDraws = (url) => {
     getAllCards();
   }, []);
 
-  return { loading, error, datas };
+  return { loading, error, datas, refetch: getAllCards };
 };
 
 export default useGetAllDraws;

@@ -40,7 +40,7 @@ const useCreateDraw = () => {
       if (data.success === false) {
         throw new Error(data.errorMessage);
       }
-      toast.success("Yeni is kaydedildi");
+      toast.success("Yeni iş kaydedildi");
       navigate("/dashboard");
     } catch (error) {
       if (
@@ -64,7 +64,7 @@ export default useCreateDraw;
 
 const errorCreateDrawHandler = ({ title, imageUrl, category }) => {
   if (!title || !imageUrl || !category) {
-    toast.error("lutfen zorunlu alanlari doldurunuz");
+    toast.error("Lütfen zorunlu alanlari doldurunuz");
     return false;
   }
 

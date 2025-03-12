@@ -9,7 +9,8 @@ const getIllustrations = expressAsyncHandler(async (req, res) => {
     category: "illustrasyonlar",
   })
     .skip(index)
-    .limit(limit);
+    .limit(limit)
+    .sort({ createdAt: -1 });
 
   if (!illustrations) {
     res.status(404);
@@ -50,7 +51,7 @@ const deleteIllustration = expressAsyncHandler(async (req, res) => {
 const allIllustrations = expressAsyncHandler(async (req, res) => {
   const illustrations = await DrawingModel.find({
     category: "illustrasyonlar",
-  });
+  }).sort({ createdAt: -1 });
 
   if (illustrations.length === 0) {
     res.status(404);

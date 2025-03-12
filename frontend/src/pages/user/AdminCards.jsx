@@ -11,7 +11,9 @@ const AdminCards = () => {
   const [formData, setFormData] = useState({});
   const [categories, setCategories] = useState([]);
 
-  const { loading, datas } = useGetAllDraws("/api/work/cards/all-cards");
+  const { loading, datas, refetch } = useGetAllDraws(
+    "/api/work/cards/all-cards"
+  );
   const { deleteDraw } = useDeleteDraw();
   const { allCategories } = useGetAllCategories();
   const { editWork } = useEditWork();
@@ -34,7 +36,8 @@ const AdminCards = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await editWork(formData);
-    console.log("Form submitted:", formData);
+    setIsModalOpen(false);
+    refetch();
   };
 
   const handleChange = (e) => {
@@ -48,6 +51,7 @@ const AdminCards = () => {
   const handleDelete = async (row) => {
     console.log(row);
     await deleteDraw(row.imageName, `/api/work/cards/${row._id}`);
+    refetch();
   };
 
   const columns = [
@@ -75,7 +79,7 @@ const AdminCards = () => {
       ),
     },
     {
-      header: "Isim",
+      header: "İsim",
       accessorKey: "title",
       cell: ({ getValue }) => {
         const title = getValue();
@@ -87,7 +91,7 @@ const AdminCards = () => {
       accessorKey: "category",
     },
     {
-      header: "Olusturulma Tarihi",
+      header: "Oluşturulma Tarihi",
       accessorKey: "createdAt",
       cell: ({ getValue }) => {
         const date = new Date(getValue());
@@ -119,8 +123,8 @@ const AdminCards = () => {
     },
   ];
   return (
-    <div className="pt-32 pb-32 pl-80 pr-20 bg-gray-300 text-slate-700 min-h-screen flex flex-col gap-10">
-      <p className="font-bold text-xl text-center">- Kartlar ve Afisler -</p>
+    <div className="pt-24 pb-32 pl-80 pr-20 bg-gray-300 text-slate-700 min-h-screen flex flex-col gap-5">
+      <p className="font-bold text-xl text-center">- Kartlar ve Afişler -</p>
       <hr />
       <Table data={data} columns={columns} />
       {isModalOpen && (
@@ -140,7 +144,7 @@ const AdminCards = () => {
             />
 
             <h2 className="text-xl font-bold mb-4 text-slate-500">
-              Kart Duzenleme
+              Kart Düzenleme
             </h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               <div className="flex items-center gap-2 justify-between">
@@ -148,7 +152,7 @@ const AdminCards = () => {
                   htmlFor="title"
                   className="font-semibold text-gray-500 flex"
                 >
-                  <span className="text-red-600"> * </span> Baslik :
+                  <span className="text-red-600"> * </span> Başlık :
                 </label>
                 <input
                   type="text"
@@ -185,7 +189,7 @@ const AdminCards = () => {
                   htmlFor="description"
                   className="font-semibold text-gray-500 flex"
                 >
-                  Aciklama :
+                  Açıklama :
                 </label>
                 <textarea
                   type="textarea"

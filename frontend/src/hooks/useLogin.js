@@ -34,7 +34,7 @@ const useLogin = () => {
         throw new Error(data.errorMessage);
       }
       dispatch(signInSuccess(data));
-      toast.success("Giris basarili :) ");
+      toast.success("Giriş başarılı :) ");
       navigate("/dashboard");
     } catch (error) {
       if (
@@ -57,19 +57,19 @@ export default useLogin;
 
 const errorLoginHandler = ({ email, password, name, confirmPassword }) => {
   if (!email || !password) {
-    toast.error("Butun form elemanlarini doldurunuz !");
+    toast.error("Bütün form elemanlarını doldurunuz !");
     return false;
   }
 
   const validEmail = validator.isEmail(email);
 
   if (!validEmail) {
-    toast.error("Email yapiniz dogru degil !");
+    toast.error("Email yapınız dogru değil !");
     return false;
   }
 
   if (password.length < 6) {
-    toast.error("Sifreniz minimum 6 karakterli olmali !");
+    toast.error("Şifreniz minimum 6 karakterli olmalı !");
     return false;
   }
 
