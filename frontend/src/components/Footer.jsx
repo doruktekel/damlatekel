@@ -26,8 +26,7 @@ const Footer = () => {
             className="flex-col font-mono text-left"
           >
             <h6 className="text-sm">İletişim</h6>
-            <p className="text-sm">cicikus@gmail.com</p>
-            <p className="text-sm">@cicikus</p>
+            <p className="text-sm">kivrakdamlatekel@gmail.com</p>
           </motion.div>
           <motion.div
             initial={{ x: 20, opacity: 0 }}
@@ -39,7 +38,7 @@ const Footer = () => {
             <ul className="text-3xl flex gap-3 ">
               <li>
                 <Link
-                  to="https://www.instagram.com/kivrak_damla"
+                  to="https://www.instagram.com/damla.illustration"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -53,7 +52,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="" target="_blank" rel="noopener noreferrer">
+                <Link
+                  to="https://www.behance.net/damlatekivrak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaBehanceSquare
                     className={` ease-in-out duration-300 ${
                       theme === "light"

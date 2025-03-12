@@ -29,11 +29,11 @@ const Free = () => {
         alt="ucretsiz indirilebilir cizim"
       />
       <p className=" text-sm">
-        Bu A6 boyutundaki katlanmış tebrik kartının yazdırılabilir PDF'ini ve
-        ayrıca renklendirmeye hazır A5 baskısını burada bulabilirsiniz:{" "}
+        Bu Kurtlar ve Kuzular kartının yazdırılabilir PDF'ini ve ayrıca
+        renklendirmeye hazır baskısını burada bulabilirsiniz:{" "}
       </p>
       <a
-        href="https://www.dropbox.com/scl/fo/67bk3gzhomda4onuad36n/ADTRkmFTsgqiFPJ_lkLkvT8?rlkey=yogt73qhxux8z28i5o1rc9xrl&st=b5ai20cn&dl=0"
+        href="https://www.dropbox.com/scl/fo/7lh52zkv7s7v583tj41gk/ALIVI3HKAS5MzZOEPdAeUhs?rlkey=0vhnx8b85xp6saxj60irybevc&e=1&st=0ccu9yj1&dl=0"
         target="_blank"
         rel="noopener noreferrer"
         className={`shadow-xl ease-in-out duration-300 px-5 py-1 flex justify-between items-center gap-2 rounded-full bg-opacity-90 border border-gray-200 ${
@@ -46,7 +46,7 @@ const Free = () => {
         <span>İndir</span>
       </a>
       <div className="w-full h-0.5 bg-slate-300"></div>
-      <motion.img
+      {/* <motion.img
         initial={{ y: 10, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{
@@ -72,7 +72,7 @@ const Free = () => {
       >
         <FaCloudDownloadAlt className="text-3xl" />
         <span>İndir</span>
-      </a>
+      </a> */}
     </div>
   );
 };

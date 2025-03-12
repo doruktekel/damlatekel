@@ -28,10 +28,7 @@ const Home = () => {
         }}
         className="my-10"
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quisquam
-        esse impedit nostrum tempora, accusamus natus praesentium. Qui quos
-        ullam illo amet veritatis alias quaerat repellendus, et minus, fugiat
-        aspernatur?
+        Ormandaki müzik şöleni
       </motion.h1>
     </div>
   );

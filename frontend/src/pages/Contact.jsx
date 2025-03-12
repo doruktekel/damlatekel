@@ -41,10 +41,10 @@ const Contact = () => {
           Benimle sosyal medya platformları dışında iletişime geçmek için mail
           atabilirsiniz. <br />
           <br />
-          Aşşağıdaki formu doldurarakda bana otomatik mail atabilirsiniz :){" "}
+          Aşağıdaki formu doldurarakda bana otomatik mail atabilirsiniz :){" "}
           <br />
           <br />
-          E-posta: hannahsun1110@gmail.com{" "}
+          E-posta: kivrakdamlatekel@gmail.com{" "}
         </p>
 
         <form
