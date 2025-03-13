@@ -27,7 +27,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Anasayfaa
+              Anasayfa
             </NavLink>
           </li>
           <li>

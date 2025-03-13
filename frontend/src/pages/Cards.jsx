@@ -39,8 +39,9 @@ const Cards = () => {
               duration: 0.5,
             }}
             viewport={{ once: true }}
+            key={data._id}
           >
-            <Card key={data._id} data={data} />
+            <Card data={data} />
           </motion.div>
         ))}
       </div>

@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import mainImage from "../assets/headerImage.webp";
 import { Link, NavLink } from "react-router-dom";
+import { MdOutlineWbSunny, MdSunny } from "react-icons/md";
+import { motion } from "motion/react";
+import mainImage from "../assets/headerImage.webp";
 import { ThemeContext } from "../context/ThemeContext";
 import Minimenu from "./Minimenu";
 import { MiniContext } from "../context/MiniMenuContext";
-import { MdOutlineWbSunny, MdSunny } from "react-icons/md";
-import { motion } from "motion/react";
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  const { show } = useContext(MiniContext);
+  const { show, setShow } = useContext(MiniContext);
   return (
     <div className="w-full flex align-middle justify-center text-center pt-5 flex-wrap">
       <motion.div
@@ -87,6 +87,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Anasayfa
                 </NavLink>
@@ -100,6 +103,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Hakkımda
                 </NavLink>
@@ -114,6 +120,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Illustasyonlar
                 </NavLink>
@@ -127,6 +136,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Kartlar ve Afişler
                 </NavLink>
@@ -141,6 +153,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Eskiz Defteri
                 </NavLink>
@@ -154,6 +169,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Ücretsiz Kaynaklar
                 </NavLink>
@@ -167,6 +185,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   Gizlilik
                 </NavLink>
@@ -180,6 +201,9 @@ const Header = () => {
                       (theme === "light" ? "text-orange-200" : "text-gray-800")
                     }`
                   }
+                  onClick={() => {
+                    setShow(!show);
+                  }}
                 >
                   İletişim
                 </NavLink>
