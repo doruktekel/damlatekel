@@ -77,7 +77,11 @@ const EskizInfo = () => {
             onClick={goToPreviousEskiz}
           />
           <div className="max-w-2xl flex-1">
-            <img src={eskizDetails.imageUrl} alt={eskizDetails.title} />
+            <img
+              src={eskizDetails.imageUrl}
+              alt={eskizDetails.title}
+              className="pointer-events-none select-none"
+            />
           </div>
           <div className="flex flex-col gap-2 flex-1">
             <p className="text-xl  ">{eskizDetails.title}</p>

@@ -81,6 +81,7 @@ const CardInfo = () => {
             <img
               src={IllustrationDetails.imageUrl}
               alt={IllustrationDetails.title}
+              className="pointer-events-none select-none"
             />
           </div>
           <div className="flex flex-col gap-2">

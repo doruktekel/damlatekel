@@ -24,7 +24,11 @@ const Header = () => {
         className="justify-center align-middle"
       >
         <Link to="/">
-          <img src={mainImage} alt="DamlaTekelKivrak" className="w-52 " />
+          <img
+            src={mainImage}
+            alt="DamlaTekelKivrak"
+            className="w-52 select-none"
+          />
         </Link>
       </motion.div>
       <div className="flex  justify-between gap-10">
@@ -51,7 +55,7 @@ const Header = () => {
               delay: 0.6,
             }}
             viewport={{ once: true }}
-            className={`text-xs font-mono  ${
+            className={`text-xs font-mono select-none  ${
               theme === "light" ? "text-stone-500" : "text-orange-100"
             } `}
           >

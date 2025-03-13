@@ -9,7 +9,7 @@ const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div
-      className={`w-full h-32  flex justify-center text-center ${
+      className={`w-full h-40  flex justify-center text-center ${
         theme === "light"
           ? " bg-blue-400 text-gray-100"
           : " bg-gray-900 text-gray-200"

@@ -16,7 +16,7 @@ const Card = ({ data }) => {
         <img
           src={data.imageUrl}
           alt={data.title}
-          className={`w-full h-auto object-cover transition-transform duration-300 ease-in-out ${
+          className={`pointer-events-none select-none w-full h-auto object-cover transition-transform duration-300 ease-in-out ${
             hovered ? "scale-105" : ""
           }`}
         />

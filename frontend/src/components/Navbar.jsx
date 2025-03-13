@@ -27,7 +27,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Anasayfa
+              Anasayfaa
             </NavLink>
           </li>
           <li>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <NavLink
               to="/cards"
               className={({ isActive }) =>
-                `nav-link px-2 font-sans  max-sm:text-sm text-lg ${
+                `nav-link px-2 font-sans max-sm:text-sm text-lg ${
                   isActive &&
                   (theme === "light" ? "text-blue-500" : "text-orange-200")
                 }`

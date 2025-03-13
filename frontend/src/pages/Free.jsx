@@ -24,7 +24,7 @@ const Free = () => {
         transition={{
           delay: 0.1,
         }}
-        className="w-full"
+        className="w-full pointer-events-none select-none"
         src={free1}
         alt="ucretsiz indirilebilir cizim"
       />

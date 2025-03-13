@@ -27,7 +27,7 @@ const Register = () => {
   return (
     <div
       className="p-10 grid items-center w-full h-lvh "
-      style={{ backgroundImage: `url(${loginbg})` }}
+      style={{ background: `url(${loginbg}) center/cover no-repeat` }}
     >
       <form
         onSubmit={handleSubmit}

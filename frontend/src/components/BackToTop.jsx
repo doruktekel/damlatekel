@@ -31,7 +31,7 @@ const BackToTop = () => {
 
   return (
     <div
-      className={`right-14 bottom-28 z-50 fixed ${
+      className={` right-2 sm:right-14 bottom-36 z-50 fixed ${
         isVisible ? "block" : "hidden"
       }`}
       onClick={scrollToTop}
