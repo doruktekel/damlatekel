@@ -207,11 +207,13 @@ const CreateWork = () => {
                   onClick={handleUploadImage}
                   className="flex gap-2 bg-slate-800 text-white hover:text-slate-800 hover:bg-white rounded-lg p-2 items-center hover:shadow-lg transition-all ease-in-out duration-300"
                 >
-                  Görseli Yükle
+                  {filePercentage > 0 && filePercentage < 100
+                    ? "Yükleniyor"
+                    : "Görseli Yükle"}
                 </button>
               </div>
               {filePercentage > 0 && filePercentage < 100 && (
-                <span className="text-green-700 font-semibold">{`Yukleniyor %${filePercentage}...`}</span>
+                <span className="text-green-700 font-semibold">{`Yükleniyor %${filePercentage}...`}</span>
               )}
               {formData.imageUrl && (
                 <div className="flex justify-between items-center">

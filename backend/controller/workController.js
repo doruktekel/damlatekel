@@ -10,6 +10,8 @@ const createWork = expressAsyncHandler(async (req, res) => {
   }
 
   const newDraw = await DrawingModel.create(req.body);
+  req.user.drawings.push(newDraw);
+
   res.status(201).json(newDraw);
 });
 const getWorks = expressAsyncHandler(async (req, res) => {
