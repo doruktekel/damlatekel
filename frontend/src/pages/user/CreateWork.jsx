@@ -39,6 +39,39 @@ const CreateWork = () => {
     setFile(e.target.files[0]);
   };
 
+  // const convertToWebP = (file) => {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+
+  //     reader.onload = function (event) {
+  //       const img = new Image();
+  //       img.onload = function () {
+  //         const canvas = document.createElement("canvas");
+  //         const ctx = canvas.getContext("2d");
+
+  //         canvas.width = img.width;
+  //         canvas.height = img.height;
+
+  //         ctx.drawImage(img, 0, 0);
+
+  //         // Görseli webp formatında sıkıştırma işlemi
+  //         canvas.toBlob(
+  //           (blob) => {
+  //             resolve(blob);
+  //           },
+  //           "image/webp",
+  //           0.8 // Sıkıştırma kalitesi (0 ile 1 arasında olabilir)
+  //         );
+  //       };
+
+  //       img.src = event.target.result;
+  //     };
+
+  //     reader.onerror = reject;
+  //     reader.readAsDataURL(file);
+  //   });
+  // };
+
   const convertToWebP = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -51,19 +84,14 @@ const CreateWork = () => {
 
           canvas.width = img.width;
           canvas.height = img.height;
-
           ctx.drawImage(img, 0, 0);
 
-          // Görseli webp formatında sıkıştırma işlemi
-          canvas.toBlob(
-            (blob) => {
-              resolve(blob);
-            },
-            "image/webp",
-            0.8 // Sıkıştırma kalitesi (0 ile 1 arasında olabilir)
-          );
+          const webpDataUrl = canvas.toDataURL("image/webp", 0.8); // 0.8 kalite ile
+          fetch(webpDataUrl)
+            .then((res) => res.blob())
+            .then((blob) => resolve(blob))
+            .catch(reject);
         };
-
         img.src = event.target.result;
       };
 
@@ -100,7 +128,9 @@ const CreateWork = () => {
       const fileName = `${new Date().getTime()}`;
 
       const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytesResumable(storageRef, file, {
+        contentType: "image/webp",
+      });
 
       uploadTask.on(
         "state_changed",

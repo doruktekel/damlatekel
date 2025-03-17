@@ -1,5 +1,6 @@
 import expressAsyncHandler from "express-async-handler";
 import DrawingModel from "../model/drawingModel.js";
+import UserModel from "../model/userModel.js";
 
 const createWork = expressAsyncHandler(async (req, res) => {
   const { title, description, imageUrl, category, user } = req.body;
@@ -10,7 +11,12 @@ const createWork = expressAsyncHandler(async (req, res) => {
   }
 
   const newDraw = await DrawingModel.create(req.body);
-  req.user.drawings.push(newDraw);
+
+  await UserModel.findByIdAndUpdate(
+    user,
+    { $push: { drawings: newDraw._id } },
+    { new: true, useFindAndModify: false }
+  );
 
   res.status(201).json(newDraw);
 });
