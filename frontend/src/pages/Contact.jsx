@@ -25,8 +25,6 @@ const Contact = () => {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  console.log(formData);
-
   return (
     <div className="max-w-5xl mx-auto py-8 gap-4 flex flex-col items-center  sm:flex-row sm:justify-between  ">
       <motion.div

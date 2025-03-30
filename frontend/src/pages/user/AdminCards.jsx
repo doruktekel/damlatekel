@@ -49,7 +49,6 @@ const AdminCards = () => {
   };
 
   const handleDelete = async (row) => {
-    console.log(row);
     await deleteDraw(row.imageName, `/api/work/cards/${row._id}`);
     refetch();
   };

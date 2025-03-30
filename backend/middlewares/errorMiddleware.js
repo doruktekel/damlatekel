@@ -4,7 +4,7 @@ const errorMiddleware = (err, req, res, next) => {
 
   if (err.name === "CastError" && err.kind === "ObjectId") {
     statusCode = 404;
-    errorMessage = "Resource not found   jdsfkjdfksjsdkfsklflk";
+    errorMessage = "Resource not found";
   }
 
   if (err.name === "ValidationError") {

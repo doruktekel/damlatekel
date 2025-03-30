@@ -10,7 +10,7 @@ const getCards = expressAsyncHandler(async (req, res) => {
     .limit(limit)
     .sort({ createdAt: -1 });
 
-  if (!cards) {
+  if (cards.length === 0) {
     res.status(404);
     throw new Error("Gosterilebilecek Kart ve Afisler bulunamadi !");
   }

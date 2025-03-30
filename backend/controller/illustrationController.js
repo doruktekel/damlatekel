@@ -12,7 +12,7 @@ const getIllustrations = expressAsyncHandler(async (req, res) => {
     .limit(limit)
     .sort({ createdAt: -1 });
 
-  if (!illustrations) {
+  if (illustrations.length === 0) {
     res.status(404);
     throw new Error("Gosterilebilecek illustrasyonlar bulunamadi !");
   }

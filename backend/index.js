@@ -2,6 +2,8 @@ import path from "path";
 import express, { urlencoded } from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
+
 import authRouter from "./router/authRouter.js";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 import databaseConnection from "./config/db.js";
@@ -20,6 +22,7 @@ dotenv.config();
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(helmet());
 
 app.use("/api/auth", authRouter);
 app.use("/api/category", categoryRouter);
