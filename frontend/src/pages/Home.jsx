@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const Home = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-10/12 mx-auto flex-col justify-center py-8 min-h-screen ">
+    <div className="w-10/12 mx-auto flex flex-col justify-center items-center  py-8 min-h-screen ">
       <motion.video
         initial={{ y: 10, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
