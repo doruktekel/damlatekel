@@ -22,22 +22,22 @@ dotenv.config();
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "https://firebasestorage.googleapis.com"],
-      scriptSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      fontSrc: [
-        "'self'",
-        "https://fonts.googleapis.com",
-        "https://fonts.gstatic.com",
-      ],
-      connectSrc: ["'self'", "https://firebasestorage.googleapis.com"],
-    },
-  })
-);
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       imgSrc: ["'self'", "data:", "https://firebasestorage.googleapis.com"],
+//       scriptSrc: ["'self'"],
+//       styleSrc: ["'self'", "'unsafe-inline'"],
+//       fontSrc: [
+//         "'self'",
+//         "https://fonts.googleapis.com",
+//         "https://fonts.gstatic.com",
+//       ],
+//       connectSrc: ["'self'", "https://firebasestorage.googleapis.com"],
+//     },
+//   })
+// );
 
 app.use("/api/auth", authRouter);
 app.use("/api/category", categoryRouter);
