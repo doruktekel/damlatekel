@@ -13,6 +13,7 @@ import cardRouter from "./router/cardRouter.js";
 import illustrationRouter from "./router/illustrationRouter.js";
 import eskizRouter from "./router/eskizRouter.js";
 import mailRouter from "./router/mailRouter.js";
+import bioRouter from "./router/bioRouter.js";
 
 const app = express();
 const __dirname = path.resolve();
@@ -46,6 +47,7 @@ app.use("/api/work/cards", cardRouter);
 app.use("/api/work/illustrations", illustrationRouter);
 app.use("/api/work/eskizs", eskizRouter);
 app.use("/api/mail", mailRouter);
+app.use("/api/bio", bioRouter);
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 app.get("*", (req, res) => {

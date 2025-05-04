@@ -25,6 +25,7 @@ import AdminEskizs from "./pages/user/AdminEskizs";
 import AdminIllustrations from "./pages/user/AdminIllustrations";
 import NotFound from "./pages/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
+import AdminBio from "./pages/user/AdminBio";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -197,6 +198,18 @@ const App = () => {
             </PrivateRoute>
           }
         />
+
+        <Route
+          path="/adminbio"
+          element={
+            <PrivateRoute>
+              <AdminLayout theme={theme}>
+                <AdminBio />
+              </AdminLayout>
+            </PrivateRoute>
+          }
+        />
+
         <Route
           path="/*"
           element={

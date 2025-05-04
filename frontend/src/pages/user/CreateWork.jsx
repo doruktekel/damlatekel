@@ -38,40 +38,6 @@ const CreateWork = () => {
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
-
-  // const convertToWebP = (file) => {
-  //   return new Promise((resolve, reject) => {
-  //     const reader = new FileReader();
-
-  //     reader.onload = function (event) {
-  //       const img = new Image();
-  //       img.onload = function () {
-  //         const canvas = document.createElement("canvas");
-  //         const ctx = canvas.getContext("2d");
-
-  //         canvas.width = img.width;
-  //         canvas.height = img.height;
-
-  //         ctx.drawImage(img, 0, 0);
-
-  //         // Görseli webp formatında sıkıştırma işlemi
-  //         canvas.toBlob(
-  //           (blob) => {
-  //             resolve(blob);
-  //           },
-  //           "image/webp",
-  //           0.8 // Sıkıştırma kalitesi (0 ile 1 arasında olabilir)
-  //         );
-  //       };
-
-  //       img.src = event.target.result;
-  //     };
-
-  //     reader.onerror = reject;
-  //     reader.readAsDataURL(file);
-  //   });
-  // };
-
   const convertToWebP = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -163,7 +129,7 @@ const CreateWork = () => {
   };
 
   return (
-    <div className="pt-40 pl-80 pr-60 bg-gray-200 text-slate-700 h-screen  ">
+    <div className="pt-40  pl-80 pr-60 bg-gray-200 text-slate-700 h-screen w-full  ">
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
         <p className="text-center font-semibold pb-4 text-xl">
           Resim Ekleme Formuna Hosgeldiniz

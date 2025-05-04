@@ -29,7 +29,6 @@ const getWorks = expressAsyncHandler(async (req, res) => {
   }
   res.status(200).json(works);
 });
-
 const editWork = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   const { title, category } = req.body;
