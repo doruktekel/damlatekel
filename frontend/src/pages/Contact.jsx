@@ -3,10 +3,15 @@ import contactPicture from "../assets/d2.webp";
 import { ThemeContext } from "../context/ThemeContext";
 import useSendMail from "../hooks/useSendMail";
 import { motion } from "motion/react";
+import useGetContact from "../hooks/useGetContact";
+import DOMPurify from "dompurify";
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
   const { loading, sendEmail } = useSendMail();
+  const { datas } = useGetContact();
+
+  console.log(datas);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,15 +40,13 @@ const Contact = () => {
         }}
         className="flex-1 flex flex-col gap-4 p-4  "
       >
-        <p>
-          Benimle sosyal medya platformları dışında iletişime geçmek için mail
-          atabilirsiniz. <br />
-          <br />
-          Aşağıdaki formu doldurarakda bana otomatik mail atabilirsiniz :){" "}
-          <br />
-          <br />
-          E-posta: kivrakdamlatekel@gmail.com{" "}
-        </p>
+        {datas?.info && (
+          <p
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(datas.info),
+            }}
+          />
+        )}
 
         <form
           className={` border-2 border-dashed rounded-xl  p-10 flex flex-col gap-10 ${
@@ -97,20 +100,22 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
-        initial={{ x: 20, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-        }}
-        className="flex-1 p-4  "
-      >
-        <img
-          src={contactPicture}
-          alt="contactPicture"
-          className=" max-h-[700px] object-cover rounded-lg"
-        />
-      </motion.div>
+      {datas?.imageUrl && (
+        <motion.div
+          initial={{ x: 20, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+          }}
+          className="flex-1 p-4  "
+        >
+          <img
+            src={datas?.imageUrl || ""}
+            alt="contactPicture"
+            className=" max-h-[700px] object-cover rounded-lg"
+          />
+        </motion.div>
+      )}
     </div>
   );
 };

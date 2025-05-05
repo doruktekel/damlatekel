@@ -42,23 +42,17 @@ const AdminSidebar = () => {
           </ul>
         )}
 
-        <p
-          className="font-semibold flex justify-between items-center select-none "
-          onClick={() => setShow(!show)}
-        >
+        <p className="font-semibold flex justify-between items-center select-none ">
           <Link to={"/adminbio"} className="hover:underline ">
             Hakkımda
           </Link>
         </p>
 
-        {/* <p
-          className="font-semibold flex justify-between items-center select-none "
-          onClick={() => setShow(!show)}
-        >
-          <Link to={"/"} className="hover:underline ">
+        <p className="font-semibold flex justify-between items-center select-none ">
+          <Link to={"/admincontact"} className="hover:underline ">
             İletişim
           </Link>
-        </p> */}
+        </p>
         <hr />
         <div
           className="flex gap-2 items-center cursor-pointer "
