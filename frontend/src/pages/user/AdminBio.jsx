@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import useGetBio from "../../hooks/useGetBio";
 import useUpdateBio from "../../hooks/useUpdateBio";
+import RichTextEditor from "../../components/RichTextEditor";
 
 const AdminBio = () => {
   const [formData, setFormData] = useState({
@@ -23,11 +24,16 @@ const AdminBio = () => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [filePercentage, setFilePercentage] = useState(0);
-  const [previewImage, setPreviewImage] = useState(null); // Önizleme için yeni state
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  // Editor için onChange handler
+  const handleEditorChange = (content) => {
+    setFormData({ ...formData, info: content });
   };
 
   const handleFileChange = (e) => {
@@ -71,7 +77,6 @@ const AdminBio = () => {
     });
   };
 
-  // Firebase Storage'a resmi yükleyen fonksiyon
   const storeImage = async (file) => {
     return new Promise((resolve, reject) => {
       const storage = getStorage(app);
@@ -118,34 +123,31 @@ const AdminBio = () => {
       return;
     }
 
-    // Form gönderilirken, eğer yeni bir dosya seçilmişse yükle
-    if (file) {
-      try {
-        setUploading(true);
+    try {
+      setUploading(true);
+
+      let updatedData = { ...formData };
+
+      // Eğer yeni dosya varsa yükle
+      if (file) {
         const webpFile = await convertToWebP(file);
         const { url, name } = await storeImage(webpFile);
 
-        // Yüklenen görsel bilgilerini formData'ya ekle
-        const updatedData = {
-          ...formData,
+        updatedData = {
+          ...updatedData,
           imageUrl: url,
           imageName: name,
         };
-
-        // Backend'e gönder
-        await updateBio(updatedData);
-        toast.success("Biyografi başarıyla güncellendi");
-        setUploading(false);
-      } catch (error) {
-        console.log(error);
-        toast.error("Görsel yükleme hatası");
-        setUploading(false);
-        return;
       }
-    } else {
-      // Eğer yeni dosya yoksa, mevcut formData'yı gönder
-      await updateBio(formData);
+
+      // Backend'e gönder
+      await updateBio(updatedData);
       toast.success("Biyografi başarıyla güncellendi");
+    } catch (error) {
+      console.log(error);
+      toast.error("İşlem sırasında bir hata oluştu");
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -167,19 +169,18 @@ const AdminBio = () => {
       <hr />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-5 w-full mx-auto bg-white p-6 rounded-xl shadow-lg"
+        className="flex flex-col gap-5 max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-lg"
       >
         <div className="flex flex-col gap-2">
-          <label htmlFor="title" className="font-semibold">
-            <span className="text-red-600"> * </span> Hakkimda
+          <label htmlFor="info" className="font-semibold">
+            <span className="text-red-600"> * </span> Hakkımda
           </label>
-          <textarea
-            type="text"
-            name="info"
-            id="info"
-            className="p-2 rounded-xl border h-40"
-            onChange={handleChange}
+          {/* Özel RichTextEditor komponenti kullanımı */}
+          <RichTextEditor
             value={formData.info}
+            onChange={handleEditorChange}
+            placeholder="Biyografi bilgilerinizi giriniz..."
+            height="240px"
           />
         </div>
         <div className="flex flex-col gap-2">
